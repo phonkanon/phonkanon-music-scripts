@@ -118,6 +118,12 @@ This is useful because when you download tracks using yt-dlp, the cover isn't em
 
 ---
 
+### soundcloud-copy-metadata
+
+Meant to be used in tandem with the previous userscript. This userscript gives you a button that extracts metadata from the webpage and copies it to your clipboard as an ffmpeg command. This way, when you download from yt-dlp, you can create a new MP3 file that embeds all the metadata and album art all in one go.
+
+---
+
 ## Contributing
 
 Feel free to fork, star, and contribute to this repository. All contributions are welcome and encouraged!
