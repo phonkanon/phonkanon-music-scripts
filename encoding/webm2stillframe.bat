@@ -145,7 +145,7 @@ if /I "%FORMAT%" == "MP4" (
     echo Video Dimensions: %coverwidth%x%coverwidth%
     echo Approx. Video Size: %approxsize%
     echo --------------------------------------    
-    ffmpeg -loop 1 -framerate 1 -loglevel error -stats -i "%coverfilename%" -i "%audiofilename%" -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:a aac -c:v libx264 -crf 23 -threads 0 -shortest "!filename!.mp4"
+    ffmpeg -loop 1 -framerate 1 -loglevel error -stats -i "%coverfilename%" -i "%audiofilename%" -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:a aac -c:v libx264 -crf 23 -threads 0 -t %duration% "!filename!.mp4"
     del %audiofilename%
     del %coverfilename%
     exit /b
