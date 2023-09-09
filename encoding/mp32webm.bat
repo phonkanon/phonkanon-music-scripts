@@ -161,7 +161,7 @@ echo Approx. Video Size: %approxsize%
 echo --------------------------------------
 
 rem create webm video
-ffmpeg -loop 1 -framerate 1 -loglevel error -stats -i %coverfilename% -i "%input%" -c:a libopus -b:a %bit_rate% -c:v libvpx-vp9 -crf 30 -cpu-used 5 -tile-columns 3 -threads 0 -shortest -strict -2 -vbr on -compression_level 10 "!outputname!.webm"
+ffmpeg -loop 1 -framerate 1 -loglevel error -stats -i %coverfilename% -i "%input%" -c:a libopus -b:a %bit_rate% -c:v libvpx-vp9 -crf 30 -cpu-used 5 -tile-columns 3 -threads 0 -shortest -strict -2 -vbr on -compression_level 10 -t %duration% "!outputname!.webm"
 
 rem delete cover art and clean up after ourselves
 del %coverfilename%
