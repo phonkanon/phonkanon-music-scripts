@@ -128,7 +128,7 @@ if /I "%FORMAT%" == "WEBM" (
     echo Video Dimensions: %coverwidth%x%coverheight%
     echo Approx. Video Size: %approxsize%
     echo --------------------------------------
-    ffmpeg -loop 1 -framerate 1 -loglevel error -stats -i "%coverartfile%" -i "%audiofile%" -c:a libopus -c:v libvpx-vp9 -crf 30 -cpu-used 5 -tile-columns 3 -threads 0 -shortest -strict 2 -vbr on -compression_level 10 "!filename!.webm"
+    ffmpeg -loop 1 -framerate 1 -loglevel error -stats -i "%coverartfile%" -i "%audiofile%" -c:a libopus -c:v libvpx-vp9 -crf 30 -cpu-used 5 -tile-columns 3 -threads 0 -t %duration% -strict 2 -vbr on -compression_level 10 "!filename!.webm"
     rem clean up
     del "%coverartfile%"
     exit /b
